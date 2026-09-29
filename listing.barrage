@@ -1,0 +1,42 @@
+# 3XB MCP
+
+> MCP face for 3XB entity intelligence. Sister of 3xb-api.
+
+## Purpose
+Explain this repo as the Model Context Protocol door to 3XB, not the full API server. Source: fitzyracing1/3xb-mcp.
+
+## How it works (plain English)
+1. An MCP client calls this door.
+2. The door talks to 3XB ideas or the API.
+3. Entity tags and weights come back to the client.
+
+## Key ideas
+- MCP (a plug for agent clients)
+- 3XB (entity intelligence)
+- Sister of 3xb-api
+
+## The actual code
+```
+# source: fitzyracing1/3xb-mcp
+ask = receive_from_mcp()
+graph = ask_3xb(ask)
+return graph
+```
+
+## Line-by-line translation
+1. receive_from_mcp() → “take the ask from the client”
+2. ask_3xb(ask) → “get the entity graph”
+3. return graph → “hand it back”
+
+## Decisions the program makes
+- If the client is MCP → accept the call
+- If the reader wants the raw API → send them to 3xb-api
+
+## What a person would notice
+A plug in front of the entity API.
+
+## Current status
+Barrage clone.
+
+## Next possible steps
+Open the source, or 3xb-api.
